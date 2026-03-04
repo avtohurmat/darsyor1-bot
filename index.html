@@ -3,92 +3,102 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>DarsYor — O'qituvchi AI Yordamchisi</title>
+<title>DarsYor — O'qituvchilar uchun AI Yordamchi | Dars rejasi, Test, Baho tahlili</title>
+<meta name="description" content="DarsYor — O'zbekiston o'qituvchilari uchun AI yordamchi. Dars rejasi, test tuzish, baho tahlili va ota-ona xabarlari — barchasi bir joyda, soniyalarda."/>
+<meta name="keywords" content="dars rejasi, o'qituvchi, AI, test tuzish, baho tahlili, uzbekistan, maktab"/>
+<meta name="author" content="DarsYor"/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:title" content="DarsYor — O'qituvchilar uchun AI Yordamchi"/>
+<meta property="og:description" content="Dars rejasi, test, baho tahlili — AI yordamida soniyalarda."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://darsyor1-bot.vercel.app"/>
+<meta property="og:image" content="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200&q=80"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="DarsYor — O'qituvchilar uchun AI Yordamchi"/>
+<meta name="twitter:description" content="Dars rejasi, test, baho tahlili — AI yordamida soniyalarda."/>
+<link rel="canonical" href="https://darsyor1-bot.vercel.app"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "DarsYor",
+  "description": "O'zbekiston o'qituvchilari uchun AI yordamchi",
+  "url": "https://darsyor1-bot.vercel.app",
+  "applicationCategory": "EducationApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "UZS"}
+}
+</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter',sans-serif;background:#fff;color:#1e293b;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1e293b;-webkit-font-smoothing:antialiased;}
 ::placeholder{color:#94a3b8;}
 input:focus,textarea:focus{outline:none;border-color:#6366f1!important;box-shadow:0 0 0 3px rgba(99,102,241,0.1);}
 .btn{border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:700;transition:all 0.18s;border-radius:10px;padding:10px 20px;font-size:14px;}
-.btn-indigo{background:#6366f1;color:#fff;} .btn-indigo:hover{background:#4f46e5;}
-.btn-tg{background:#0088cc;color:#fff;} .btn-tg:hover{background:#0077b3;}
-.btn-ghost{background:transparent;border:1px solid #e2e8f0;color:#64748b;} .btn-ghost:hover{border-color:#6366f1;color:#6366f1;}
+.btn-indigo{background:#6366f1;color:#fff;}.btn-indigo:hover{background:#4f46e5;}
+.btn-tg{background:#0088cc;color:#fff;}.btn-tg:hover{background:#0077b3;}
+.btn-ghost{background:transparent;border:1px solid #e2e8f0;color:#64748b;}.btn-ghost:hover{border-color:#6366f1;color:#6366f1;}
 .btn:disabled{background:#e2e8f0!important;color:#94a3b8!important;cursor:not-allowed;}
 .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;}
 nav{position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid #f1f5f9;z-index:100;}
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
-.logo{font-weight:900;font-size:17px;color:#1e293b;letter-spacing:-0.5px;}
-.nav-right{display:flex;align-items:center;gap:10px;}
-.lang-btn{padding:3px 8px;border-radius:6px;border:none;cursor:pointer;font-size:11px;font-weight:700;background:transparent;color:#94a3b8;font-family:'Inter',sans-serif;}
+.logo{font-weight:900;font-size:17px;color:#1e293b;letter-spacing:-0.5px;text-decoration:none;}
+.lang-btn{padding:3px 8px;border-radius:6px;border:none;cursor:pointer;font-size:11px;font-weight:700;background:transparent;color:#94a3b8;font-family:'Inter',sans-serif;transition:all 0.15s;}
 .lang-btn.active{background:#6366f1;color:#fff;}
-section{padding:64px 24px;}
-.hero{text-align:center;max-width:680px;margin:0 auto;padding:80px 24px;}
+.hero{text-align:center;max-width:680px;margin:0 auto;padding:80px 24px 72px;}
 .badge{display:inline-flex;align-items:center;gap:6px;background:#ede9fe;border-radius:50px;padding:5px 14px;font-size:12px;color:#6366f1;font-weight:700;margin-bottom:24px;}
 h1{font-size:52px;font-weight:900;line-height:1.08;letter-spacing:-2px;margin-bottom:18px;}
 h1 span{color:#6366f1;}
 .hero-sub{font-size:17px;color:#64748b;line-height:1.7;margin-bottom:32px;}
-.trust{margin-top:16px;font-size:12px;color:#cbd5e1;}
+.trust{margin-top:14px;font-size:12px;color:#cbd5e1;}
+.section-bg{background:#f8fafc;padding:64px 24px;}
+.section-pad{padding:64px 24px;}
+.section-title{text-align:center;font-size:26px;font-weight:800;letter-spacing:-0.5px;margin-bottom:40px;}
 .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:960px;margin:0 auto;}
-.feat-card{padding:22px;border-radius:16px;cursor:default;transition:transform 0.2s,box-shadow 0.2s;}
+.feat-card{padding:22px;border-radius:16px;cursor:default;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e2e8f0;}
 .feat-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.08);}
-.feat-icon{font-size:26px;margin-bottom:10px;}
-.feat-title{font-weight:700;font-size:14px;color:#1e293b;margin-bottom:5px;}
-.feat-desc{font-size:13px;color:#94a3b8;line-height:1.6;}
 .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:700px;margin:0 auto;}
-.how-step{text-align:center;}
 .step-num{width:40px;height:40px;border-radius:50%;background:#6366f1;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;margin:0 auto 12px;}
-.step-t{font-weight:700;font-size:14px;color:#1e293b;margin-bottom:5px;}
-.step-d{font-size:13px;color:#94a3b8;line-height:1.5;}
 .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:960px;margin:0 auto;align-items:start;}
-.plan-card{padding:24px;border-radius:18px;position:relative;}
+.plan-card{padding:24px;border-radius:18px;position:relative;border:1px solid #e2e8f0;}
 .plan-card.popular{border:2px solid #6366f1!important;box-shadow:0 8px 32px rgba(99,102,241,0.15);}
 .popular-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#6366f1;color:#fff;font-size:11px;font-weight:800;padding:3px 14px;border-radius:50px;white-space:nowrap;}
-.plan-name{font-weight:800;font-size:16px;color:#1e293b;margin-bottom:6px;}
-.plan-price{font-size:28px;font-weight:900;color:#1e293b;margin-bottom:16px;}
-.plan-price span{font-size:28px;}
-.plan-price.indigo span{color:#6366f1;}
-.plan-feat{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:13px;color:#64748b;}
-.plan-feat b{color:#6366f1;}
 .cta-section{text-align:center;padding:80px 24px;}
-footer{border-top:1px solid #f1f5f9;padding:20px 24px;text-align:center;color:#cbd5e1;font-size:13px;}
+footer{border-top:1px solid #f1f5f9;padding:24px;text-align:center;color:#cbd5e1;font-size:13px;}
 
 /* AUTH */
 #auth-page{display:none;min-height:100vh;background:#f8fafc;align-items:center;justify-content:center;padding:16px;}
 .auth-wrap{width:100%;max-width:400px;}
 .auth-logo{text-align:center;margin-bottom:24px;}
 .auth-logo-icon{width:46px;height:46px;border-radius:13px;background:#6366f1;display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 10px;}
-.auth-logo-name{font-weight:900;font-size:20px;color:#1e293b;letter-spacing:-0.5px;}
 .auth-card{background:#fff;border-radius:20px;padding:28px;border:1px solid #e2e8f0;box-shadow:0 4px 24px rgba(0,0,0,0.06);}
 .steps-bar{display:flex;align-items:center;margin-bottom:28px;}
 .step-dot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;transition:all 0.3s;}
-.step-dot.done{background:#6366f1;color:#fff;}
-.step-dot.active{background:#6366f1;color:#fff;}
+.step-dot.done,.step-dot.active{background:#6366f1;color:#fff;}
 .step-dot.idle{background:#f1f5f9;color:#94a3b8;}
 .step-line{flex:1;height:2px;margin:0 4px;transition:background 0.3s;}
 .step-line.done{background:#6366f1;}
 .step-line.idle{background:#f1f5f9;}
 .auth-step{display:none;}
-.auth-step.active{display:block;}
-.step-title{font-weight:800;font-size:17px;color:#1e293b;margin-bottom:4px;}
-.step-sub{font-size:13px;color:#64748b;margin-bottom:20px;line-height:1.6;}
-.field-label{font-size:12px;font-weight:600;color:#64748b;margin-bottom:6px;}
-.field-input{width:100%;padding:11px 14px;border-radius:10px;border:1px solid #e2e8f0;font-size:15px;color:#1e293b;font-family:'Inter',sans-serif;}
-.tg-link{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;border-radius:12px;background:#0088cc;color:#fff;font-weight:700;font-size:14px;text-decoration:none;margin-bottom:10px;}
+.auth-step.active{display:block;animation:fadeUp 0.25s ease;}
+.tg-link{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;border-radius:12px;background:#0088cc;color:#fff;font-weight:700;font-size:14px;text-decoration:none;margin-bottom:10px;transition:background 0.18s;}
+.tg-link:hover{background:#0077b3;}
 .channel-card{border:1px solid #e2e8f0;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;margin-bottom:16px;}
 .channel-icon{width:40px;height:40px;border-radius:10px;background:#6366f1;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-.demo-hint{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#166534;}
-.code-input{width:100%;padding:14px;border-radius:12px;border:2px solid #e2e8f0;font-size:28px;font-weight:800;text-align:center;letter-spacing:12px;font-family:'Inter',sans-serif;color:#1e293b;transition:border 0.2s;}
+.code-input{width:100%;padding:14px;border-radius:12px;border:2px solid #e2e8f0;font-size:28px;font-weight:800;text-align:center;letter-spacing:12px;font-family:'Inter',sans-serif;color:#1e293b;transition:border 0.2s;margin-bottom:4px;}
 .code-input.valid{border-color:#6366f1;}
-.code-input.error{border-color:#fca5a5;}
-.err-msg{font-size:12px;color:#ef4444;text-align:center;margin-bottom:12px;}
+.code-input.error-state{border-color:#fca5a5;}
+.err-msg{font-size:12px;color:#ef4444;text-align:center;margin-bottom:12px;display:none;}
 .back-link{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding:0 4px;}
 
 /* DASHBOARD */
 #dash-page{display:none;min-height:100vh;background:#f8fafc;}
 .dash-nav{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:100;}
 .dash-nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
-.avatar{width:34px;height:34px;border-radius:50%;background:#6366f1;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff;cursor:pointer;}
+.avatar{width:34px;height:34px;border-radius:50%;background:#6366f1;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff;cursor:pointer;user-select:none;}
 .dash-content{max-width:760px;margin:0 auto;padding:28px 24px;}
 .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;}
 .stat-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:14px 16px;}
@@ -98,14 +108,33 @@ footer{border-top:1px solid #f1f5f9;padding:20px 24px;text-align:center;color:#c
 .tool-tab{padding:9px 16px;font-size:13px;border-radius:10px;border:none;cursor:pointer;font-weight:600;font-family:'Inter',sans-serif;background:#f1f5f9;color:#64748b;transition:all 0.18s;}
 .tool-tab.active{background:#6366f1;color:#fff;}
 .input-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;margin-bottom:14px;}
-.input-area{width:100%;min-height:100px;border:none;padding:16px;font-size:15px;color:#1e293b;resize:none;font-family:'Inter',sans-serif;line-height:1.6;}
+.input-area{width:100%;min-height:100px;border:none;padding:16px;font-size:15px;color:#1e293b;resize:none;font-family:'Inter',sans-serif;line-height:1.6;display:block;}
 .input-footer{border-top:1px solid #f1f5f9;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;}
+.profile-dropdown{position:absolute;right:24px;top:60px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:14px;min-width:190px;z-index:200;box-shadow:0 8px 30px rgba(0,0,0,0.1);display:none;}
+.profile-dropdown.open{display:block;}
+
+/* LESSON PLAN CARD */
+.lesson-card{border-radius:20px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 8px 32px rgba(0,0,0,0.07);margin-bottom:16px;}
+.lesson-hero{position:relative;height:160px;overflow:hidden;}
+.lesson-hero img{width:100%;height:100%;object-fit:cover;}
+.lesson-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,23,42,0.2),rgba(15,23,42,0.8));}
+.lesson-hero-content{position:absolute;bottom:16px;left:20px;right:20px;}
+.lesson-badge{display:inline-block;background:#6366f1;color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 10px;border-radius:50px;margin-bottom:6px;}
+.lesson-title{color:#fff;font-weight:800;font-size:17px;line-height:1.3;text-shadow:0 1px 4px rgba(0,0,0,0.4);}
+.lesson-body{background:#fff;padding:4px 0 12px;}
+.lesson-section{margin:8px 14px;border-radius:14px;overflow:hidden;border:1px solid #f1f5f9;}
+.lesson-section-head{padding:10px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f1f5f9;}
+.lesson-section-title{font-weight:800;font-size:13px;}
+.lesson-section-body{padding:10px 16px;background:#fff;}
+.lesson-section-line{font-size:13px;color:#334155;line-height:1.75;}
+.lesson-footer{padding:10px 14px;border-top:1px solid #f1f5f9;display:flex;justify-content:flex-end;background:#fafafa;}
 .result-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;border-left:3px solid #6366f1;}
 .result-label{font-size:11px;font-weight:700;color:#6366f1;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:12px;}
 .result-text{white-space:pre-wrap;color:#334155;font-size:14px;line-height:1.8;font-family:'Inter',sans-serif;}
 .empty-state{text-align:center;color:#cbd5e1;font-size:14px;padding:32px 0;}
-.profile-dropdown{position:absolute;right:24px;top:60px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:14px;min-width:190px;z-index:200;box-shadow:0 8px 30px rgba(0,0,0,0.1);display:none;}
-.profile-dropdown.open{display:block;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.fu{animation:fadeUp 0.25s ease;}
 
 @media(max-width:640px){
   h1{font-size:34px!important;letter-spacing:-1px!important;}
@@ -113,7 +142,8 @@ footer{border-top:1px solid #f1f5f9;padding:20px 24px;text-align:center;color:#c
   .plan-grid{grid-template-columns:1fr!important;}
   .how-grid{grid-template-columns:1fr!important;}
   .stat-grid{grid-template-columns:1fr 1fr!important;}
-  .nav-right .btn-ghost{display:none;}
+  .hide-m{display:none!important;}
+  .hero{padding:56px 20px 56px!important;}
 }
 </style>
 </head>
@@ -123,54 +153,63 @@ footer{border-top:1px solid #f1f5f9;padding:20px 24px;text-align:center;color:#c
 <div id="landing-page">
   <nav>
     <div class="nav-inner">
-      <span class="logo">📚 DarsYor</span>
-      <div class="nav-right">
+      <a class="logo" href="/">📚 DarsYor</a>
+      <div style="display:flex;align-items:center;gap:8px;">
         <button class="lang-btn active" onclick="setLang('uz')">UZ</button>
         <button class="lang-btn" onclick="setLang('ru')">RU</button>
         <button class="lang-btn" onclick="setLang('en')">EN</button>
-        <button class="btn btn-ghost" onclick="goAuth()" id="signin-btn">Kirish</button>
+        <button class="btn btn-ghost hide-m" onclick="goAuth()" id="signin-btn">Kirish</button>
         <button class="btn btn-tg" onclick="goAuth()" id="start-btn">✈️ Boshlash</button>
       </div>
     </div>
   </nav>
 
-  <div class="hero">
-    <div class="badge">✦ <span id="hero-badge">O'zbekiston uchun AI yordamchi</span></div>
-    <h1 id="hero-h1">O'qituvchi ishini <span id="hero-h1b">osonlashtiring</span></h1>
-    <p class="hero-sub" id="hero-sub">Dars rejasi, test, baho tahlili — AI yordamida soniyalarda.</p>
-    <button class="btn btn-tg" style="padding:14px 32px;font-size:15px;" onclick="goAuth()">✈️ <span id="hero-cta">Bepul boshlash</span></button>
-    <div class="trust" id="hero-trust">Karta kerak emas · Bepul · O'zbek tilida</div>
-  </div>
+  <main>
+    <div class="hero">
+      <div class="badge">✦ <span id="hero-badge">O'zbekiston uchun AI yordamchi</span></div>
+      <h1 id="hero-h1">O'qituvchi ishini <span>osonlashtiring</span></h1>
+      <p class="hero-sub" id="hero-sub">Dars rejasi, test, baho tahlili — AI yordamida soniyalarda.</p>
+      <button class="btn btn-tg" style="padding:14px 32px;font-size:15px;" onclick="goAuth()">✈️ <span id="hero-cta">Bepul boshlash</span></button>
+      <div class="trust" id="hero-trust">Karta kerak emas · Bepul · O'zbek tilida</div>
+    </div>
 
-  <section style="background:#f8fafc;padding:64px 24px;">
-    <div class="feat-grid" id="feat-grid"></div>
-  </section>
+    <section class="section-bg" aria-label="Imkoniyatlar">
+      <div class="feat-grid" id="feat-grid"></div>
+    </section>
 
-  <section>
-    <h2 style="text-align:center;font-size:26px;font-weight:800;letter-spacing:-0.5px;margin-bottom:40px;" id="how-title">Qanday ishlaydi?</h2>
-    <div class="how-grid" id="how-grid"></div>
-  </section>
+    <section class="section-pad" aria-label="Qanday ishlaydi">
+      <h2 class="section-title" id="how-title">Qanday ishlaydi?</h2>
+      <div class="how-grid" id="how-grid"></div>
+    </section>
 
-  <section id="pricing" style="background:#f8fafc;">
-    <h2 style="text-align:center;font-size:26px;font-weight:800;margin-bottom:8px;" id="pricing-title">Narxlar</h2>
-    <p style="text-align:center;color:#94a3b8;font-size:14px;margin-bottom:40px;" id="pricing-sub">30 kun bepul sinab ko'ring</p>
-    <div class="plan-grid" id="plan-grid"></div>
-  </section>
+    <section class="section-bg" id="pricing" aria-label="Narxlar">
+      <h2 class="section-title" id="pricing-title">Narxlar</h2>
+      <p style="text-align:center;color:#94a3b8;font-size:14px;margin-top:-28px;margin-bottom:40px;" id="pricing-sub">30 kun bepul sinab ko'ring</p>
+      <div class="plan-grid" id="plan-grid"></div>
+    </section>
 
-  <div class="cta-section">
-    <h2 style="font-size:32px;font-weight:900;letter-spacing:-1px;margin-bottom:10px;" id="cta-title">Bugun boshlang</h2>
-    <p style="color:#94a3b8;font-size:15px;margin-bottom:28px;">10 000+ o'qituvchiga qo'shiling</p>
-    <button class="btn btn-tg" style="padding:14px 36px;font-size:15px;" onclick="goAuth()">✈️ <span id="cta-btn">Bepul boshlash</span></button>
-  </div>
-  <footer>© 2025 DarsYor — O'qituvchilar uchun AI yordamchi</footer>
+    <div class="cta-section">
+      <h2 style="font-size:32px;font-weight:900;letter-spacing:-1px;margin-bottom:10px;" id="cta-title">Bugun boshlang</h2>
+      <p style="color:#94a3b8;font-size:15px;margin-bottom:28px;">10 000+ o'qituvchiga qo'shiling</p>
+      <button class="btn btn-tg" style="padding:14px 36px;font-size:15px;" onclick="goAuth()">✈️ <span id="cta-btn">Bepul boshlash</span></button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 DarsYor — O'qituvchilar uchun AI yordamchi</p>
+    <p style="margin-top:6px;font-size:12px;">
+      <a href="https://t.me/darsyor_uz" style="color:#94a3b8;text-decoration:none;">Telegram kanal</a> ·
+      <a href="https://t.me/DarsYor_bot" style="color:#94a3b8;text-decoration:none;">Bot</a>
+    </p>
+  </footer>
 </div>
 
 <!-- AUTH -->
-<div id="auth-page" style="display:none;min-height:100vh;background:#f8fafc;display:none;align-items:center;justify-content:center;padding:16px;">
+<div id="auth-page" style="display:none;min-height:100vh;background:#f8fafc;align-items:center;justify-content:center;padding:16px;">
   <div class="auth-wrap">
     <div class="auth-logo">
       <div class="auth-logo-icon">📚</div>
-      <div class="auth-logo-name">DarsYor</div>
+      <div style="font-weight:900;font-size:20px;color:#1e293b;letter-spacing:-0.5px;">DarsYor</div>
     </div>
     <div class="auth-card">
       <div class="steps-bar">
@@ -180,21 +219,17 @@ footer{border-top:1px solid #f1f5f9;padding:20px 24px;text-align:center;color:#c
         <div class="step-line idle" id="line2"></div>
         <div class="step-dot idle" id="dot3">3</div>
       </div>
-
-      <!-- Step 1 -->
       <div class="auth-step active" id="step1">
-        <div class="step-title" id="s1-title">Botga o'ting</div>
-        <div class="step-sub" id="s1-sub">Telefon raqamingizni yuboring</div>
-        <div class="field-label" id="phone-label">Telefon raqam (demo)</div>
-        <input class="field-input" id="phone-input" placeholder="+998 90 000 00 00" style="margin-bottom:12px;"/>
-        <a href="https://t.me/DarsYor_bot" target="_blank" class="tg-link">✈️ <span id="open-bot">@DarsYor_bot ga o'tish →</span></a>
+        <div style="font-weight:800;font-size:17px;color:#1e293b;margin-bottom:4px;" id="s1-title">Botga o'ting</div>
+        <div style="font-size:13px;color:#64748b;margin-bottom:20px;line-height:1.6;" id="s1-sub">Telefon raqamingizni yuboring</div>
+        <div style="font-size:12px;font-weight:600;color:#64748b;margin-bottom:6px;" id="phone-label">Telefon raqam</div>
+        <input id="phone-input" placeholder="+998 90 000 00 00" style="width:100%;padding:11px 14px;border-radius:10px;border:1px solid #e2e8f0;font-size:15px;color:#1e293b;font-family:'Inter',sans-serif;margin-bottom:12px;"/>
+        <a href="https://t.me/DarsYor_bot" target="_blank" rel="noopener" class="tg-link">✈️ <span id="open-bot">@DarsYor_bot ga o'tish →</span></a>
         <button class="btn btn-indigo" style="width:100%;padding:12px;" onclick="goStep2()" id="next1-btn">Davom etish →</button>
       </div>
-
-      <!-- Step 2 -->
       <div class="auth-step" id="step2">
-        <div class="step-title" id="s2-title">Kanalga a'zo bo'ling</div>
-        <div class="step-sub" id="s2-sub">A'zo bo'lgach kod olasiz</div>
+        <div style="font-weight:800;font-size:17px;color:#1e293b;margin-bottom:4px;" id="s2-title">Kanalga a'zo bo'ling</div>
+        <div style="font-size:13px;color:#64748b;margin-bottom:20px;line-height:1.6;" id="s2-sub">A'zo bo'lgach kod olasiz</div>
         <div class="channel-card">
           <div class="channel-icon">📢</div>
           <div>
@@ -202,18 +237,16 @@ footer{border-top:1px solid #f1f5f9;padding:20px 24px;text-align:center;color:#c
             <div style="font-size:12px;color:#94a3b8;">@darsyor_uz</div>
           </div>
         </div>
-        <a href="https://t.me/darsyor_uz" target="_blank" class="tg-link">✈️ <span id="join-channel">Kanalga a'zo bo'lish →</span></a>
-        <button class="btn btn-indigo" style="width:100%;padding:12px;" onclick="goStep3()" id="joined-btn">A'zo bo'ldim →</button>
+        <a href="https://t.me/darsyor_uz" target="_blank" rel="noopener" class="tg-link">✈️ <span id="join-channel">Kanalga a'zo bo'lish →</span></a>
+        <button class="btn btn-indigo" style="width:100%;padding:12px;" onclick="goStep3()">A'zo bo'ldim →</button>
         <button class="btn btn-ghost" style="width:100%;padding:9px;margin-top:8px;" onclick="goStep1()">← Orqaga</button>
       </div>
-
-      <!-- Step 3 -->
       <div class="auth-step" id="step3">
-        <div class="step-title" id="s3-title">Kodni kiriting</div>
-        <div class="step-sub" id="s3-sub">Botdan kelgan 6 raqamli kodni kiriting</div>
+        <div style="font-weight:800;font-size:17px;color:#1e293b;margin-bottom:4px;" id="s3-title">Kodni kiriting</div>
+        <div style="font-size:13px;color:#64748b;margin-bottom:16px;line-height:1.6;" id="s3-sub">Botdan kelgan 6 raqamli kodni kiriting</div>
         <input class="code-input" id="code-input" maxlength="6" placeholder="000000" oninput="onCodeInput(this)" onkeydown="if(event.key==='Enter')confirmCode()"/>
-        <div class="err-msg" id="code-err" style="display:none;">⚠ Kod noto'g'ri, qayta urinib ko'ring</div>
-        <button class="btn btn-indigo" style="width:100%;padding:12px;margin-top:4px;" onclick="confirmCode()" id="confirm-btn" disabled>Tasdiqlash →</button>
+        <div class="err-msg" id="code-err">⚠ Kod noto'g'ri, qayta urinib ko'ring</div>
+        <button class="btn btn-indigo" style="width:100%;padding:12px;margin-top:8px;" onclick="confirmCode()" id="confirm-btn" disabled>Tasdiqlash →</button>
         <button class="btn btn-ghost" style="width:100%;padding:9px;margin-top:8px;" onclick="goStep2()">← Orqaga</button>
       </div>
     </div>
@@ -232,8 +265,8 @@ footer{border-top:1px solid #f1f5f9;padding:20px 24px;text-align:center;color:#c
 <div id="dash-page" style="display:none;">
   <div class="dash-nav" style="position:relative;">
     <div class="dash-nav-inner">
-      <span class="logo">📚 DarsYor</span>
-      <div style="display:flex;align-items:center;gap:10px;">
+      <a class="logo" href="/">📚 DarsYor</a>
+      <div style="display:flex;align-items:center;gap:8px;">
         <button class="lang-btn active" onclick="setLang('uz')">UZ</button>
         <button class="lang-btn" onclick="setLang('ru')">RU</button>
         <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -268,333 +301,289 @@ footer{border-top:1px solid #f1f5f9;padding:20px 24px;text-align:center;color:#c
 <script>
 const API_URL = "https://addedly-hygroscopic-shanice.ngrok-free.dev";
 
-const LANGS = {
-  uz:{
-    signin:"Kirish", start:"✈️ Boshlash",
-    heroBadge:"O'zbekiston uchun AI yordamchi",
-    heroH1:"O'qituvchi ishini", heroH1b:"osonlashtiring",
-    heroSub:"Dars rejasi, test, baho tahlili — AI yordamida soniyalarda.",
-    heroCta:"Bepul boshlash", heroTrust:"Karta kerak emas · Bepul · O'zbek tilida",
-    howTitle:"Qanday ishlaydi?",
-    pricingTitle:"Narxlar", pricingSub:"30 kun bepul sinab ko'ring",
-    ctaTitle:"Bugun boshlang",
-    feats:[
-      {icon:"📝",t:"Dars Rejasi",d:"Mavzu kiriting — to'liq reja tayyor"},
-      {icon:"📊",t:"Test Tuzish",d:"Avtomatik savol va javoblar"},
-      {icon:"📈",t:"Baho Tahlili",d:"Statistika va tavsiyalar"},
-      {icon:"💬",t:"Ota-Ona Xabari",d:"Shaxsiylashtirilgan xabar"},
-    ],
-    steps:[
-      {n:"1",t:"Telegram orqali kiring",d:"Bot telefon raqamingizni so'raydi"},
-      {n:"2",t:"Kanalga a'zo bo'ling",d:"A'zo bo'lgach 6 xonali kod olasiz"},
-      {n:"3",t:"Kodni kiriting",d:"Saytga kiring va ishlashni boshlang"},
-    ],
-    plans:[
-      {name:"Bepul",price:"0",period:"",feats:["5 dars rejasi/oy","10 test/oy","Baho tahlili","Email yordam"],cta:"Boshlash",pop:false},
-      {name:"Pro",price:"49 000",period:" so'm/oy",feats:["Cheksiz dars rejasi","Cheksiz test","Baho tahlili","Ota-ona xabari","Ustuvor yordam"],cta:"30 kun bepul",pop:true},
-      {name:"Maktab",price:"299 000",period:" so'm/oy",feats:["50 o'qituvchi","Admin panel","Hisobotlar","Maxsus yordam","O'qitish kursi"],cta:"Bog'lanish",pop:false},
-    ],
-    s1t:"Botga o'ting", s1d:"Telefon raqamingizni yuboring",
-    s2t:"Kanalga a'zo bo'ling", s2d:"A'zo bo'lgach kod olasiz",
-    s3t:"Kodni kiriting", s3d:"Botdan kelgan 6 raqamli kodni kiriting",
-    openBot:"@DarsYor_bot ga o'tish →", joinCh:"Kanalga a'zo bo'lish →",
-    phoneLabel:"Telefon raqam",
-    tools:["📝 Dars Rejasi","📊 Test","📈 Baho Tahlili","💬 Xabar"],
-    phs:["3-sinf, Juft va toq sonlar...","Fizika, Nyuton qonunlari, 10 savol...","Ali-85, Vali-72, Sardor-90...","Ali 2 haftada darsga kelmadi..."],
-    gen:"Yaratish ✦", generating:"Yaratilmoqda...", result:"Natija",
-    stat1:"Tejangan vaqt", stat2:"Yaratilgan", stat3:"Tarif",
-    wrongCode:"⚠ Kod noto'g'ri, qayta urinib ko'ring",
-  },
-  ru:{
-    signin:"Войти", start:"✈️ Начать",
-    heroBadge:"ИИ-помощник для Узбекистана",
-    heroH1:"Упростите работу", heroH1b:"учителя",
-    heroSub:"Планы уроков, тесты, анализ оценок — с ИИ за секунды.",
-    heroCta:"Начать бесплатно", heroTrust:"Карта не нужна · Бесплатно",
-    howTitle:"Как это работает?",
-    pricingTitle:"Цены", pricingSub:"30 дней бесплатного пробного периода",
-    ctaTitle:"Начните сегодня",
-    feats:[
-      {icon:"📝",t:"План урока",d:"Введите тему — готовый план"},
-      {icon:"📊",t:"Составить тест",d:"Автоматические вопросы"},
-      {icon:"📈",t:"Анализ оценок",d:"Статистика и рекомендации"},
-      {icon:"💬",t:"Сообщение родителям",d:"Персональное сообщение"},
-    ],
-    steps:[
-      {n:"1",t:"Войдите через Telegram",d:"Бот запросит номер телефона"},
-      {n:"2",t:"Подпишитесь на канал",d:"После подписки получите код"},
-      {n:"3",t:"Введите код",d:"Войдите и начните работу"},
-    ],
-    plans:[
-      {name:"Бесплатно",price:"0",period:"",feats:["5 планов/мес","10 тестов/мес","Анализ оценок","Email поддержка"],cta:"Начать",pop:false},
-      {name:"Про",price:"49 000",period:" сум/мес",feats:["Безлимит планов","Безлимит тестов","Анализ оценок","Сообщения родителям","Приоритетная поддержка"],cta:"30 дней бесплатно",pop:true},
-      {name:"Школа",price:"299 000",period:" сум/мес",feats:["50 учителей","Панель администратора","Отчёты","Спец. поддержка","Курс обучения"],cta:"Связаться",pop:false},
-    ],
-    s1t:"Откройте бот", s1d:"Отправьте свой номер телефона",
-    s2t:"Подпишитесь на канал", s2d:"После подписки получите код",
-    s3t:"Введите код", s3d:"Введите 6-значный код из бота",
-    openBot:"Открыть @DarsYor_bot →", joinCh:"Подписаться на канал →",
-    phoneLabel:"Номер телефона",
-    tools:["📝 План урока","📊 Тест","📈 Оценки","💬 Сообщение"],
-    phs:["6 класс, дроби...","Физика, законы Ньютона, 10 вопросов...","Али-85, Вали-72...","Ученик не посещает уроки..."],
-    gen:"Создать ✦", generating:"Создаётся...", result:"Результат",
-    stat1:"Сэкономлено", stat2:"Создано", stat3:"Тариф",
-    wrongCode:"⚠ Неверный код, попробуйте снова",
-  },
-  en:{
-    signin:"Sign In", start:"✈️ Get Started",
-    heroBadge:"AI Assistant for Uzbekistan",
-    heroH1:"Simplify teacher's", heroH1b:"workflow",
-    heroSub:"Lesson plans, tests, grade analysis — AI-powered, in seconds.",
-    heroCta:"Start for Free", heroTrust:"No card needed · Free",
-    howTitle:"How it works?",
-    pricingTitle:"Pricing", pricingSub:"Try free for 30 days",
-    ctaTitle:"Start Today",
-    feats:[
-      {icon:"📝",t:"Lesson Plan",d:"Enter topic — instant plan"},
-      {icon:"📊",t:"Build Tests",d:"Auto questions & answers"},
-      {icon:"📈",t:"Grade Analysis",d:"Stats and recommendations"},
-      {icon:"💬",t:"Parent Message",d:"Personalized messages"},
-    ],
-    steps:[
-      {n:"1",t:"Sign in via Telegram",d:"Bot will ask for your phone"},
-      {n:"2",t:"Join our channel",d:"After joining, get a code"},
-      {n:"3",t:"Enter the code",d:"Sign in and start working"},
-    ],
-    plans:[
-      {name:"Free",price:"0",period:"",feats:["5 plans/mo","10 tests/mo","Grade analysis","Email support"],cta:"Get Started",pop:false},
-      {name:"Pro",price:"49 000",period:" UZS/mo",feats:["Unlimited plans","Unlimited tests","Grade analysis","Parent messages","Priority support"],cta:"30 days free",pop:true},
-      {name:"School",price:"299 000",period:" UZS/mo",feats:["50 teachers","Admin panel","Reports","Dedicated support","Training course"],cta:"Contact Us",pop:false},
-    ],
-    s1t:"Open the Bot", s1d:"Send your phone number",
-    s2t:"Join our Channel", s2d:"After joining, get a code",
-    s3t:"Enter the Code", s3d:"Enter the 6-digit code from the bot",
-    openBot:"Open @DarsYor_bot →", joinCh:"Join the Channel →",
-    phoneLabel:"Phone number",
-    tools:["📝 Lesson Plan","📊 Test","📈 Grades","💬 Message"],
-    phs:["Grade 3, Even and odd numbers...","Physics, Newton's laws, 10 questions...","Ali-85, Vali-72, Sardor-90...","Student absent for 2 weeks..."],
-    gen:"Generate ✦", generating:"Generating...", result:"Result",
-    stat1:"Time saved", stat2:"Generated", stat3:"Plan",
-    wrongCode:"⚠ Wrong code, please try again",
-  }
+const SUBJECT_IMGS = {
+  math:"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80",
+  physics:"https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&q=80",
+  bio:"https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&q=80",
+  history:"https://images.unsplash.com/photo-1461360228754-6e81c478b882?w=800&q=80",
+  lang:"https://images.unsplash.com/photo-1474932430478-367dbb6832c1?w=800&q=80",
+  chem:"https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80",
+  default:"https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80"
 };
 
-const SYS = [
-  "You are a school teacher assistant. Create a detailed lesson plan in the same language as the user's input. Structure: Objective, Materials, Introduction (5 min), Main Activity (25 min), Practice (10 min), Assessment, Homework.",
-  "You are a test creator. Create numbered questions in the same language as the user's input. Provide 4 options (A-D), mark correct answers.",
+const SECTION_META = {
+  maqsad:{icon:"🎯",color:"#6366f1",bg:"#eef2ff"},
+  material:{icon:"🧰",color:"#0891b2",bg:"#ecfeff"},
+  kirish:{icon:"👋",color:"#d97706",bg:"#fffbeb"},
+  asosiy:{icon:"📖",color:"#059669",bg:"#ecfdf5"},
+  amaliy:{icon:"✏️",color:"#7c3aed",bg:"#f5f3ff"},
+  baho:{icon:"📋",color:"#dc2626",bg:"#fef2f2"},
+  uy:{icon:"🏠",color:"#ea580c",bg:"#fff7ed"},
+  def:{icon:"📌",color:"#475569",bg:"#f8fafc"}
+};
+
+function getSecMeta(h){
+  const s=h.toLowerCase();
+  if(s.match(/maqsad|цель|objective/)) return SECTION_META.maqsad;
+  if(s.match(/material|жиҳоз|kerak|восстан/)) return SECTION_META.material;
+  if(s.match(/kirish|введ|intro|boshlan/)) return SECTION_META.kirish;
+  if(s.match(/asosiy|основ|main|faoliyat/)) return SECTION_META.asosiy;
+  if(s.match(/mustahk|amaliy|practice|закреп/)) return SECTION_META.amaliy;
+  if(s.match(/baho|оцен|assess|tekshir/)) return SECTION_META.baho;
+  if(s.match(/uy|vazifa|домаш|homework/)) return SECTION_META.uy;
+  return SECTION_META.def;
+}
+
+function getImg(input){
+  const s=(input||"").toLowerCase();
+  if(s.match(/mat|riyoz|числ|дробь|геометр|juft|toq/)) return SUBJECT_IMGS.math;
+  if(s.match(/fizik|физик|physics/)) return SUBJECT_IMGS.physics;
+  if(s.match(/bio|биол/)) return SUBJECT_IMGS.bio;
+  if(s.match(/tar|исто|histor/)) return SUBJECT_IMGS.history;
+  if(s.match(/til|язык|lang|adab|лит/)) return SUBJECT_IMGS.lang;
+  if(s.match(/kim|хим|chem/)) return SUBJECT_IMGS.chem;
+  return SUBJECT_IMGS.default;
+}
+
+function parsePlan(text){
+  const lines=text.split("\n");
+  const sections=[];
+  let cur=null;
+  for(const raw of lines){
+    const line=raw.trim();
+    if(!line){if(cur)cur.lines.push("");continue;}
+    const m=line.match(/^#{1,3}\s+(.+)/)||line.match(/^\*\*(.+)\*\*$/)||line.match(/^([A-ZА-ЯҚҒЎa-zа-яқғў][^:]{2,40}):\s*$/);
+    const heading=m?m[1].replace(/\*\*/g,""):null;
+    if(heading){
+      if(cur)sections.push(cur);
+      cur={heading,lines:[],meta:getSecMeta(heading)};
+    } else if(cur){
+      cur.lines.push(line.replace(/^\*\s+/,"• ").replace(/^-\s+/,"• ").replace(/\*\*/g,""));
+    } else {
+      if(!sections.length)sections.push({heading:null,lines:[line.replace(/\*\*/g,"")],meta:SECTION_META.def});
+      else sections[0].lines.push(line.replace(/\*\*/g,""));
+    }
+  }
+  if(cur)sections.push(cur);
+  return sections;
+}
+
+function renderLessonCard(text, input, lang){
+  const sections=parsePlan(text);
+  const img=getImg(input);
+  const lbl=lang==="ru"?"ДАРС РЕЖАСИ":lang==="en"?"LESSON PLAN":"DARS REJASI";
+  const topic=sections.find(s=>s.heading)?.heading||sections[0]?.lines?.[0]||"";
+  let html=`<div class="lesson-card fu">
+    <div class="lesson-hero">
+      <img src="${img}" alt="${topic}" loading="lazy" onerror="this.src='${SUBJECT_IMGS.default}'"/>
+      <div class="lesson-hero-overlay"></div>
+      <div class="lesson-hero-content">
+        <div class="lesson-badge">${lbl}</div>
+        <div class="lesson-title">${topic}</div>
+      </div>
+    </div>
+    <div class="lesson-body">`;
+  for(const sec of sections){
+    if(!sec.heading&&!sec.lines.filter(l=>l.trim()).length)continue;
+    if(!sec.heading&&topic&&sec.lines[0]===topic)continue;
+    const m=sec.meta;
+    const bodyLines=sec.lines.filter(l=>l.trim());
+    if(!bodyLines.length)continue;
+    html+=`<div class="lesson-section">`;
+    if(sec.heading)html+=`<div class="lesson-section-head" style="background:${m.bg};border-bottom:1px solid #f1f5f9;">
+      <span style="font-size:18px;">${m.icon}</span>
+      <span class="lesson-section-title" style="color:${m.color};">${sec.heading}</span>
+    </div>`;
+    html+=`<div class="lesson-section-body">`;
+    for(const l of bodyLines)html+=`<div class="lesson-section-line">${l.replace(/</g,"&lt;")}</div>`;
+    html+=`</div></div>`;
+  }
+  html+=`</div>
+    <div class="lesson-footer">
+      <button class="btn btn-ghost" style="padding:7px 16px;font-size:13px;" onclick="window.print()">🖨️ Chop etish</button>
+    </div>
+  </div>`;
+  return html;
+}
+
+const LANGS={
+  uz:{signin:"Kirish",start:"✈️ Boshlash",heroBadge:"O'zbekiston uchun AI yordamchi",heroH1a:"O'qituvchi ishini",heroH1b:"osonlashtiring",heroSub:"Dars rejasi, test, baho tahlili — AI yordamida soniyalarda.",heroCta:"Bepul boshlash",heroTrust:"Karta kerak emas · Bepul · O'zbek tilida",howTitle:"Qanday ishlaydi?",pricingTitle:"Narxlar",pricingSub:"30 kun bepul sinab ko'ring",ctaTitle:"Bugun boshlang",
+    feats:[{icon:"📝",t:"Dars Rejasi",d:"Mavzu kiriting — to'liq reja tayyor"},{icon:"📊",t:"Test Tuzish",d:"Avtomatik savol va javoblar"},{icon:"📈",t:"Baho Tahlili",d:"Statistika va tavsiyalar"},{icon:"💬",t:"Ota-Ona Xabari",d:"Shaxsiylashtirilgan xabar"}],
+    steps:[{n:"1",t:"Telegram orqali kiring",d:"Bot telefon raqamingizni so'raydi"},{n:"2",t:"Kanalga a'zo bo'ling",d:"A'zo bo'lgach 6 xonali kod olasiz"},{n:"3",t:"Kodni kiriting",d:"Saytga kiring va ishlashni boshlang"}],
+    plans:[{name:"Bepul",price:"0",period:"",feats:["5 dars rejasi/oy","10 test/oy","Baho tahlili","Email yordam"],cta:"Boshlash",pop:false},{name:"Pro",price:"49 000",period:" so'm/oy",feats:["Cheksiz dars rejasi","Cheksiz test","Baho tahlili","Ota-ona xabari","Ustuvor yordam"],cta:"30 kun bepul",pop:true},{name:"Maktab",price:"299 000",period:" so'm/oy",feats:["50 o'qituvchi","Admin panel","Hisobotlar","Maxsus yordam","O'qitish kursi"],cta:"Bog'lanish",pop:false}],
+    s1t:"Botga o'ting",s1d:"Telefon raqamingizni yuboring",s2t:"Kanalga a'zo bo'ling",s2d:"A'zo bo'lgach kod olasiz",s3t:"Kodni kiriting",s3d:"Botdan kelgan 6 raqamli kodni kiriting",openBot:"@DarsYor_bot ga o'tish →",joinCh:"Kanalga a'zo bo'lish →",phoneLabel:"Telefon raqam",
+    tools:["📝 Dars Rejasi","📊 Test","📈 Baho Tahlili","💬 Xabar"],
+    phs:["3-sinf, Juft va toq sonlar...","Fizika, Nyuton qonunlari, 10 savol...","Ali-85, Vali-72, Sardor-90...","Ali 2 haftada darsga kelmadi..."],
+    gen:"Yaratish ✦",generating:"Yaratilmoqda...",result:"Natija",stat1:"Tejangan vaqt",stat2:"Yaratilgan",stat3:"Tarif",wrongCode:"⚠ Kod noto'g'ri, qayta urinib ko'ring"},
+  ru:{signin:"Войти",start:"✈️ Начать",heroBadge:"ИИ-помощник для Узбекистана",heroH1a:"Упростите работу",heroH1b:"учителя",heroSub:"Планы уроков, тесты, анализ оценок — с ИИ за секунды.",heroCta:"Начать бесплатно",heroTrust:"Карта не нужна · Бесплатно",howTitle:"Как это работает?",pricingTitle:"Цены",pricingSub:"30 дней бесплатного пробного периода",ctaTitle:"Начните сегодня",
+    feats:[{icon:"📝",t:"План урока",d:"Введите тему — готовый план"},{icon:"📊",t:"Тест",d:"Автоматические вопросы"},{icon:"📈",t:"Анализ оценок",d:"Статистика и рекомендации"},{icon:"💬",t:"Сообщение родителям",d:"Персональное сообщение"}],
+    steps:[{n:"1",t:"Войдите через Telegram",d:"Бот запросит номер телефона"},{n:"2",t:"Подпишитесь на канал",d:"После подписки получите код"},{n:"3",t:"Введите код",d:"Войдите и начните работу"}],
+    plans:[{name:"Бесплатно",price:"0",period:"",feats:["5 планов/мес","10 тестов/мес","Анализ оценок","Email поддержка"],cta:"Начать",pop:false},{name:"Про",price:"49 000",period:" сум/мес",feats:["Безлимит планов","Безлимит тестов","Анализ оценок","Сообщения родителям","Приоритетная поддержка"],cta:"30 дней бесплатно",pop:true},{name:"Школа",price:"299 000",period:" сум/мес",feats:["50 учителей","Панель администратора","Отчёты","Спец. поддержка","Курс обучения"],cta:"Связаться",pop:false}],
+    s1t:"Откройте бот",s1d:"Отправьте свой номер телефона",s2t:"Подпишитесь на канал",s2d:"После подписки получите код",s3t:"Введите код",s3d:"Введите 6-значный код из бота",openBot:"Открыть @DarsYor_bot →",joinCh:"Подписаться на канал →",phoneLabel:"Номер телефона",
+    tools:["📝 План урока","📊 Тест","📈 Оценки","💬 Сообщение"],
+    phs:["6 класс, дроби...","Физика, законы Ньютона, 10 вопросов...","Али-85, Вали-72...","Ученик не посещает уроки..."],
+    gen:"Создать ✦",generating:"Создаётся...",result:"Результат",stat1:"Сэкономлено",stat2:"Создано",stat3:"Тариф",wrongCode:"⚠ Неверный код, попробуйте снова"},
+  en:{signin:"Sign In",start:"✈️ Get Started",heroBadge:"AI Assistant for Uzbekistan",heroH1a:"Simplify teacher's",heroH1b:"workflow",heroSub:"Lesson plans, tests, grade analysis — AI-powered, in seconds.",heroCta:"Start for Free",heroTrust:"No card needed · Free",howTitle:"How it works?",pricingTitle:"Pricing",pricingSub:"Try free for 30 days",ctaTitle:"Start Today",
+    feats:[{icon:"📝",t:"Lesson Plan",d:"Enter topic — instant plan"},{icon:"📊",t:"Build Tests",d:"Auto questions & answers"},{icon:"📈",t:"Grade Analysis",d:"Stats and recommendations"},{icon:"💬",t:"Parent Message",d:"Personalized messages"}],
+    steps:[{n:"1",t:"Sign in via Telegram",d:"Bot will ask for your phone"},{n:"2",t:"Join our channel",d:"After joining, get a code"},{n:"3",t:"Enter the code",d:"Sign in and start working"}],
+    plans:[{name:"Free",price:"0",period:"",feats:["5 plans/mo","10 tests/mo","Grade analysis","Email support"],cta:"Get Started",pop:false},{name:"Pro",price:"49 000",period:" UZS/mo",feats:["Unlimited plans","Unlimited tests","Grade analysis","Parent messages","Priority support"],cta:"30 days free",pop:true},{name:"School",price:"299 000",period:" UZS/mo",feats:["50 teachers","Admin panel","Reports","Dedicated support","Training course"],cta:"Contact Us",pop:false}],
+    s1t:"Open the Bot",s1d:"Send your phone number",s2t:"Join our Channel",s2d:"After joining, get a code",s3t:"Enter the Code",s3d:"Enter the 6-digit code from the bot",openBot:"Open @DarsYor_bot →",joinCh:"Join the Channel →",phoneLabel:"Phone number",
+    tools:["📝 Lesson Plan","📊 Test","📈 Grades","💬 Message"],
+    phs:["Grade 3, Even and odd numbers...","Physics, Newton's laws, 10 questions...","Ali-85, Vali-72, Sardor-90...","Student absent for 2 weeks..."],
+    gen:"Generate ✦",generating:"Generating...",result:"Result",stat1:"Time saved",stat2:"Generated",stat3:"Plan",wrongCode:"⚠ Wrong code, please try again"}
+};
+
+const SYS=[
+  "You are a school teacher assistant. Create a detailed lesson plan in the same language as the user's input. Use clear headings for each section: Objective, Materials, Introduction (5 min), Main Activity (25 min), Practice (10 min), Assessment, Homework. Under each heading write the content as bullet points.",
+  "You are a test creator. Create numbered questions in the same language as the user's input. Provide 4 options (A-D), mark correct answers clearly.",
   "You are a grade analyst. Analyze grades in the same language as the user's input. Show average, highest, lowest. List students needing help. Give 3 recommendations.",
   "You are a school communication assistant. Write a short (3-4 sentence) warm professional parent message in the same language as the user's input."
 ];
 
-let currentLang = "uz";
-let currentTool = 0;
-let currentUser = null;
-let genCount = 0;
+let lang="uz", tool=0, user=null, genCount=0;
 
-function setLang(l) {
-  currentLang = l;
-  document.querySelectorAll(".lang-btn").forEach(b => b.classList.toggle("active", b.textContent === l.toUpperCase()));
-  renderLanding();
-  renderAuth();
-  renderDash();
+function setLang(l){
+  lang=l;
+  document.querySelectorAll(".lang-btn").forEach(b=>b.classList.toggle("active",b.textContent===l.toUpperCase()));
+  renderAll();
 }
 
-function showPage(p) {
-  document.getElementById("landing-page").style.display = p==="landing" ? "block" : "none";
-  const ap = document.getElementById("auth-page");
-  ap.style.display = p==="auth" ? "flex" : "none";
-  document.getElementById("dash-page").style.display = p==="dash" ? "block" : "none";
+function showPage(p){
+  document.getElementById("landing-page").style.display=p==="landing"?"block":"none";
+  const ap=document.getElementById("auth-page");
+  ap.style.display=p==="auth"?"flex":"none";
+  document.getElementById("dash-page").style.display=p==="dash"?"block":"none";
+  if(p==="auth")ap.classList.add("fu");
 }
 
-function goAuth() { showPage("auth"); }
+function goAuth(){showPage("auth");}
 
-function renderLanding() {
-  const t = LANGS[currentLang];
-  document.getElementById("signin-btn").textContent = t.signin;
-  document.getElementById("start-btn").innerHTML = t.start;
-  document.getElementById("hero-badge").textContent = t.heroBadge;
-  document.getElementById("hero-h1").innerHTML = t.heroH1 + ' <span style="color:#6366f1">' + t.heroH1b + '</span>';
-  document.getElementById("hero-sub").textContent = t.heroSub;
-  document.getElementById("hero-cta").textContent = t.heroCta;
-  document.getElementById("hero-trust").textContent = t.heroTrust;
-  document.getElementById("how-title").textContent = t.howTitle;
-  document.getElementById("pricing-title").textContent = t.pricingTitle;
-  document.getElementById("pricing-sub").textContent = t.pricingSub;
-  document.getElementById("cta-title").textContent = t.ctaTitle;
-  document.getElementById("cta-btn").textContent = t.heroCta;
-
-  document.getElementById("feat-grid").innerHTML = t.feats.map(f=>`
-    <div class="card feat-card">
-      <div class="feat-icon">${f.icon}</div>
-      <div class="feat-title">${f.t}</div>
-      <div class="feat-desc">${f.d}</div>
-    </div>`).join("");
-
-  document.getElementById("how-grid").innerHTML = t.steps.map(s=>`
-    <div class="how-step">
-      <div class="step-num">${s.n}</div>
-      <div class="step-t">${s.t}</div>
-      <div class="step-d">${s.d}</div>
-    </div>`).join("");
-
-  document.getElementById("plan-grid").innerHTML = t.plans.map(p=>`
-    <div class="card plan-card ${p.pop?'popular':''}">
-      ${p.pop?'<div class="popular-badge">⭐ POPULAR</div>':''}
-      <div class="plan-name">${p.name}</div>
-      <div class="plan-price ${p.pop?'indigo':''}"><span>${p.price==="0"?(currentLang==="uz"?"Bepul":currentLang==="ru"?"Бесплатно":"Free"):p.price}</span>${p.price!=="0"?'<small style="font-size:13px;color:#94a3b8;">'+p.period+'</small>':''}</div>
-      ${p.feats.map(f=>`<div class="plan-feat"><b>✓</b>${f}</div>`).join("")}
-      <button class="btn ${p.pop?'btn-indigo':'btn-ghost'}" style="width:100%;padding:11px;margin-top:16px;" onclick="goAuth()">${p.cta}</button>
-    </div>`).join("");
+function renderAll(){
+  const t=LANGS[lang];
+  // Landing
+  const el=id=>document.getElementById(id);
+  el("signin-btn").textContent=t.signin;
+  el("start-btn").innerHTML="✈️ "+t.start.replace("✈️ ","");
+  el("hero-badge").textContent=t.heroBadge;
+  el("hero-h1").innerHTML=t.heroH1a+' <span style="color:#6366f1">'+t.heroH1b+"</span>";
+  el("hero-sub").textContent=t.heroSub;
+  el("hero-cta").textContent=t.heroCta;
+  el("hero-trust").textContent=t.heroTrust;
+  el("how-title").textContent=t.howTitle;
+  el("pricing-title").textContent=t.pricingTitle;
+  el("pricing-sub").textContent=t.pricingSub;
+  el("cta-title").textContent=t.ctaTitle;
+  el("cta-btn").textContent=t.heroCta;
+  el("feat-grid").innerHTML=t.feats.map(f=>`<div class="card feat-card"><div style="font-size:26px;margin-bottom:10px;">${f.icon}</div><div style="font-weight:700;font-size:14px;color:#1e293b;margin-bottom:5px;">${f.t}</div><div style="font-size:13px;color:#94a3b8;line-height:1.6;">${f.d}</div></div>`).join("");
+  el("how-grid").innerHTML=t.steps.map(s=>`<div style="text-align:center;"><div class="step-num">${s.n}</div><div style="font-weight:700;font-size:14px;color:#1e293b;margin-bottom:5px;">${s.t}</div><div style="font-size:13px;color:#94a3b8;line-height:1.5;">${s.d}</div></div>`).join("");
+  const freeLabel=lang==="ru"?"Бесплатно":lang==="en"?"Free":"Bepul";
+  el("plan-grid").innerHTML=t.plans.map(p=>`<div class="plan-card card ${p.pop?"popular":""}">${p.pop?'<div class="popular-badge">⭐ POPULAR</div>':''}<div style="font-weight:800;font-size:16px;color:#1e293b;margin-bottom:6px;">${p.name}</div><div style="font-size:28px;font-weight:900;color:${p.pop?"#6366f1":"#1e293b"};margin-bottom:16px;">${p.price==="0"?freeLabel:p.price}<small style="font-size:13px;color:#94a3b8;">${p.period}</small></div>${p.feats.map(f=>`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:13px;color:#64748b;"><b style="color:#6366f1;">✓</b>${f}</div>`).join("")}<button class="btn ${p.pop?"btn-indigo":"btn-ghost"}" style="width:100%;padding:11px;margin-top:16px;" onclick="goAuth()">${p.cta}</button></div>`).join("");
+  // Auth
+  el("s1-title").textContent=t.s1t;
+  el("s1-sub").textContent=t.s1d;
+  el("s2-title").textContent=t.s2t;
+  el("s2-sub").textContent=t.s2d;
+  el("s3-title").textContent=t.s3t;
+  el("s3-sub").textContent=t.s3d;
+  el("open-bot").textContent=t.openBot;
+  el("join-channel").textContent=t.joinCh;
+  el("phone-label").textContent=t.phoneLabel;
+  // Dash
+  el("stat1-lbl").textContent=t.stat1;
+  el("stat2-lbl").textContent=t.stat2;
+  el("stat3-lbl").textContent=t.stat3;
+  el("tool-tabs").innerHTML=t.tools.map((tb,i)=>`<button class="tool-tab ${i===tool?"active":""}" onclick="setTool(${i})">${tb}</button>`).join("");
+  el("ai-input").placeholder=t.phs[tool];
 }
 
-function renderAuth() {
-  const t = LANGS[currentLang];
-  document.getElementById("s1-title").textContent = t.s1t;
-  document.getElementById("s1-sub").textContent = t.s1d;
-  document.getElementById("s2-title").textContent = t.s2t;
-  document.getElementById("s2-sub").textContent = t.s2d;
-  document.getElementById("s3-title").textContent = t.s3t;
-  document.getElementById("s3-sub").textContent = t.s3d;
-  document.getElementById("open-bot").textContent = t.openBot;
-  document.getElementById("join-channel").textContent = t.joinCh;
-  document.getElementById("phone-label").textContent = t.phoneLabel;
-  document.getElementById("phone-input").placeholder = "+998 90 000 00 00";
-}
+function setTool(i){tool=i;document.getElementById("ai-input").value="";document.getElementById("output-area").innerHTML="";renderAll();}
+function clearAll(){document.getElementById("ai-input").value="";document.getElementById("output-area").innerHTML="";}
 
-function renderDash() {
-  const t = LANGS[currentLang];
-  document.getElementById("stat1-lbl").textContent = t.stat1;
-  document.getElementById("stat2-lbl").textContent = t.stat2;
-  document.getElementById("stat3-lbl").textContent = t.stat3;
-  document.getElementById("tool-tabs").innerHTML = t.tools.map((tb,i)=>
-    `<button class="tool-tab ${i===currentTool?'active':''}" onclick="setTool(${i})">${tb}</button>`
-  ).join("");
-  document.getElementById("ai-input").placeholder = t.phs[currentTool];
-}
+function goStep2(){if(document.getElementById("phone-input").value.length<6)return;setStep(2);}
+function goStep3(){setStep(3);}
+function goStep1(){setStep(1);}
 
-function setTool(i) {
-  currentTool = i;
-  document.getElementById("ai-input").value = "";
-  document.getElementById("output-area").innerHTML = "";
-  renderDash();
-}
-
-function clearAll() {
-  document.getElementById("ai-input").value = "";
-  document.getElementById("output-area").innerHTML = "";
-}
-
-// Steps
-function goStep2() {
-  const ph = document.getElementById("phone-input").value;
-  if (ph.length < 6) return;
-  setStep(2);
-}
-function goStep3() { setStep(3); }
-function goStep1() { setStep(1); }
-
-function setStep(n) {
-  [1,2,3].forEach(i => {
-    document.getElementById("step"+i).classList.toggle("active", i===n);
-    const dot = document.getElementById("dot"+i);
-    dot.className = "step-dot " + (i<n?"done":i===n?"active":"idle");
-    dot.textContent = i<n?"✓":i;
+function setStep(n){
+  [1,2,3].forEach(i=>{
+    document.getElementById("step"+i).classList.toggle("active",i===n);
+    const d=document.getElementById("dot"+i);
+    d.className="step-dot "+(i<n?"done":i===n?"active":"idle");
+    d.textContent=i<n?"✓":i;
   });
-  [1,2].forEach(i => {
-    document.getElementById("line"+i).className = "step-line " + (i<n?"done":"idle");
-  });
+  [1,2].forEach(i=>document.getElementById("line"+i).className="step-line "+(i<n?"done":"idle"));
 }
 
-function onCodeInput(el) {
-  el.value = el.value.replace(/\D/g,"");
-  el.className = "code-input " + (el.value.length===6?"valid":"");
-  document.getElementById("confirm-btn").disabled = el.value.length < 6;
-  document.getElementById("code-err").style.display = "none";
+function onCodeInput(el){
+  el.value=el.value.replace(/\D/g,"");
+  el.className="code-input "+(el.value.length===6?"valid":"");
+  document.getElementById("confirm-btn").disabled=el.value.length<6;
+  document.getElementById("code-err").style.display="none";
 }
 
-async function confirmCode() {
-  const code = document.getElementById("code-input").value;
-  if (code.length < 6) return;
-  document.getElementById("confirm-btn").textContent = "...";
-  document.getElementById("confirm-btn").disabled = true;
-  try {
-    const res = await fetch(`${API_URL}/verify/${code}`, {
-      headers: { "ngrok-skip-browser-warning": "1", "Accept": "application/json" }
+async function confirmCode(){
+  const code=document.getElementById("code-input").value;
+  if(code.length<6)return;
+  const btn=document.getElementById("confirm-btn");
+  btn.textContent="...";btn.disabled=true;
+  try{
+    const res=await fetch(`${API_URL}/verify/${code}`,{headers:{"ngrok-skip-browser-warning":"1","Accept":"application/json"}});
+    if(res.ok){
+      const data=await res.json();
+      loginUser({name:"O'qituvchi",phone:data.phone});
+    } else showCodeErr();
+  } catch{showCodeErr();}
+}
+
+function showCodeErr(){
+  document.getElementById("code-err").textContent=LANGS[lang].wrongCode;
+  document.getElementById("code-err").style.display="block";
+  document.getElementById("code-input").value="";
+  document.getElementById("code-input").className="code-input";
+  document.getElementById("confirm-btn").textContent="Tasdiqlash →";
+  document.getElementById("confirm-btn").disabled=true;
+}
+
+function loginUser(u){
+  user=u;
+  document.getElementById("avatar-btn").textContent=u.name[0].toUpperCase();
+  document.getElementById("dash-greeting").textContent=u.name.split(" ")[0];
+  document.getElementById("prof-name").textContent=u.name;
+  document.getElementById("prof-phone").textContent="📱 "+u.phone;
+  showPage("dash");renderAll();
+}
+
+function toggleProfile(){document.getElementById("profile-dropdown").classList.toggle("open");}
+function doLogout(){user=null;document.getElementById("profile-dropdown").classList.remove("open");showPage("landing");}
+
+async function generate(){
+  const input=document.getElementById("ai-input").value.trim();
+  if(!input)return;
+  const t=LANGS[lang];
+  const btn=document.getElementById("gen-btn");
+  btn.textContent=t.generating;btn.disabled=true;
+  document.getElementById("output-area").innerHTML="";
+  try{
+    const res=await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1200,system:SYS[tool],messages:[{role:"user",content:input}]})
     });
-    if (res.ok) {
-      const data = await res.json();
-      loginUser({ name:"O'qituvchi", phone: data.phone });
-    } else {
-      showCodeErr();
-    }
-  } catch(e) {
-    showCodeErr();
-  }
-}
-
-function showCodeErr() {
-  const t = LANGS[currentLang];
-  document.getElementById("code-err").textContent = t.wrongCode;
-  document.getElementById("code-err").style.display = "block";
-  document.getElementById("code-input").value = "";
-  document.getElementById("code-input").className = "code-input";
-  document.getElementById("confirm-btn").textContent = LANGS[currentLang].s3t.includes("Код")?"Подтвердить →":"Tasdiqlash →";
-  document.getElementById("confirm-btn").disabled = true;
-}
-
-function loginUser(user) {
-  currentUser = user;
-  document.getElementById("avatar-btn").textContent = user.name[0].toUpperCase();
-  document.getElementById("dash-greeting").textContent = user.name.split(" ")[0];
-  document.getElementById("prof-name").textContent = user.name;
-  document.getElementById("prof-phone").textContent = "📱 " + user.phone;
-  showPage("dash");
-  renderDash();
-}
-
-function toggleProfile() {
-  document.getElementById("profile-dropdown").classList.toggle("open");
-}
-
-function doLogout() {
-  currentUser = null;
-  document.getElementById("profile-dropdown").classList.remove("open");
-  showPage("landing");
-}
-
-async function generate() {
-  const input = document.getElementById("ai-input").value.trim();
-  if (!input) return;
-  const t = LANGS[currentLang];
-  const btn = document.getElementById("gen-btn");
-  btn.textContent = t.generating;
-  btn.disabled = true;
-  document.getElementById("output-area").innerHTML = "";
-  try {
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
-      method:"POST", headers:{"Content-Type":"application/json"},
-      body: JSON.stringify({ model:"claude-sonnet-4-20250514", max_tokens:1000, system:SYS[currentTool], messages:[{role:"user",content:input}] })
-    });
-    const data = await res.json();
-    const text = data.content?.[0]?.text || "Xatolik.";
+    const data=await res.json();
+    const text=data.content?.[0]?.text||"Xatolik.";
     genCount++;
-    document.getElementById("gen-count").textContent = genCount;
-    document.getElementById("output-area").innerHTML = `
-      <div class="result-card">
-        <div class="result-label">${t.result}</div>
-        <div class="result-text">${text.replace(/</g,"&lt;")}</div>
-      </div>`;
-  } catch {
-    document.getElementById("output-area").innerHTML = `<div class="result-card"><div class="result-text">Xatolik yuz berdi.</div></div>`;
+    document.getElementById("gen-count").textContent=genCount;
+    if(tool===0){
+      document.getElementById("output-area").innerHTML=renderLessonCard(text,input,lang);
+    } else {
+      document.getElementById("output-area").innerHTML=`<div class="result-card fu"><div class="result-label">${t.result}</div><div class="result-text">${text.replace(/</g,"&lt;")}</div></div>`;
+    }
+  } catch{
+    document.getElementById("output-area").innerHTML=`<div class="result-card"><div class="result-text">Xatolik yuz berdi.</div></div>`;
   }
-  btn.textContent = t.gen;
-  btn.disabled = false;
+  btn.textContent=t.gen;btn.disabled=false;
 }
 
 // Init
-renderLanding();
-renderAuth();
-renderDash();
+renderAll();
 showPage("landing");
 </script>
 </body>
