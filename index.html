@@ -563,12 +563,13 @@ async function generate(){
   btn.textContent=t.generating;btn.disabled=true;
   document.getElementById("output-area").innerHTML="";
   try{
-    const res=await fetch("https://api.anthropic.com/v1/messages",{
-      method:"POST",headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1200,system:SYS[tool],messages:[{role:"user",content:input}]})
+    const res=await fetch(API_URL+"/ai",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","ngrok-skip-browser-warning":"1"},
+      body:JSON.stringify({system:SYS[tool],message:input})
     });
     const data=await res.json();
-    const text=data.content?.[0]?.text||"Xatolik.";
+    const text=data.text||"Xatolik.";
     genCount++;
     document.getElementById("gen-count").textContent=genCount;
     if(tool===0){
@@ -576,8 +577,8 @@ async function generate(){
     } else {
       document.getElementById("output-area").innerHTML=`<div class="result-card fu"><div class="result-label">${t.result}</div><div class="result-text">${text.replace(/</g,"&lt;")}</div></div>`;
     }
-  } catch{
-    document.getElementById("output-area").innerHTML=`<div class="result-card"><div class="result-text">Xatolik yuz berdi.</div></div>`;
+  } catch(e){
+    document.getElementById("output-area").innerHTML=`<div class="result-card"><div class="result-text">Xatolik: `+e.message+`</div></div>`;
   }
   btn.textContent=t.gen;btn.disabled=false;
 }
